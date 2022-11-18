@@ -3,7 +3,7 @@
 
 lazy val commonSettings = Seq(
   organization := "org.bitbucket.eunjeon",
-  scalaVersion := "2.12.0",   // default
+  scalaVersion := "2.12.15",   // default
   publishMavenStyle := true,
   publishArtifact in Test := false,
   // useGpg := true,
@@ -56,7 +56,7 @@ lazy val seunjeon = (project in file(".")).
     name := "seunjeon",
     version := "1.5.0",
     isSnapshot := true,
-    javacOptions ++= Seq("-source", "1.8", "-target", "1.8"),
+    javacOptions ++= Seq("-source", "17", "-target", "17"),
     libraryDependencies ++= Seq(
       "org.slf4j" % "slf4j-jdk14" % "1.7.12" % Runtime,
       "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
@@ -66,15 +66,15 @@ lazy val seunjeon = (project in file(".")).
   )
 
 val elasticsearchPluginName = "analysis-seunjeon"
-val esVersion = "7.16.2"
-val esJavaVersion = "1.8"
+val esVersion = "8.4.3"
+val esJavaVersion = "17"
 
 lazy val elasticsearch = (project in file("elasticsearch")).dependsOn(seunjeon).
   settings(commonSettings: _*).
   settings(
     name := elasticsearchPluginName,
 
-    scalaVersion := "2.12.0",
+    scalaVersion := "2.12.15",
 
     version := s"${esVersion}.0",
 

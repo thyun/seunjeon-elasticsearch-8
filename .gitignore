@@ -1,4 +1,5 @@
 .idea
+.bsp/
 src/main/target
 mecab-ko-dic*
 target

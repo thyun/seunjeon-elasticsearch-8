@@ -11,7 +11,7 @@ public class SeunjeonAnalyzerProvider extends AbstractIndexAnalyzerProvider<Seun
     private final SeunjeonAnalyzer analyzer;
 
     public SeunjeonAnalyzerProvider(IndexSettings indexSettings, Environment environment, String name, Settings settings) {
-        super(indexSettings, name, settings);
+        super(name, settings);
         analyzer = new SeunjeonAnalyzer();
     }
 

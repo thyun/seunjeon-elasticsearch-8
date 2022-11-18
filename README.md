@@ -1,4 +1,4 @@
-# seunjeon for Elasticsearch 7 or newer
+# seunjeon for Elasticsearch 8 or newer
 analysis-seunjeon(은전한닢) is the best Korean analyzer, especially useful for Elasticsearch. Unfortunately [original seunjeon repo](https://bitbucket.org/eunjeon/seunjeon/) hasn't been upgraded since 2018 and doesn't work with the latest version of Elasticsearch. So I've patched the module to work properly in Elasticsearch 7 and It's very easy to use as shown below:
 
 ## How to Install
@@ -11,6 +11,7 @@ $ bin/elasticsearch-plugin install https://github.com/likejazz/seunjeon-elastics
 
 | Supported Elasticsearch version | release note | release date |
 | --------------------------------| ------------ | ------------ |
+| 8.4.3                           | 8.4.3        | Nov 18, 2022 |
 | 8.0.0, 8.1.2                    | Releases for Elasticsearch 8 | Feb 22, 2022 |
 | 7.16.3, 7.16.2, 7.9.1           | Patched to work properly on Elasticsearch 7 | Jan 13, 2022 |
 
@@ -138,7 +139,7 @@ GET seunjeon-test/_analyze
 | `seunjeon.compress` | 사전 압축모드, `true` 또는 `false`를 값으로 받습니다.| `-Xmx1g` 이하에서는 기본값이 `true`가 됩니다. `_ES_JAVA_OPTS="-Dseunjeon.compress=true" ./bin/elasticsearch` |
 
 ## How to Build
-Requirements: JDK 1.8
+Requirements: JDK 17
 ```bash
 # Download Dictionary
 $ ./scripts/download-dict.sh mecab-ko-dic-2.1.1-20180720
